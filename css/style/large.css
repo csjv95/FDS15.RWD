@@ -1,26 +1,44 @@
 body{
   background-color: skyblue;
-  font-size: 1.6em;
+  font-size: 1.6rem;
+}
+.container{
+  justify-content: center;
 }
 .appHeader, .appMain{
-  margin: 0 auto;
-}
-.appHeader{
   width: 1000px;
-  position: relative;
-  margin-bottom: 1.5em;
+}
+.appNavigation, .appFooter{
+  width: 100%;
+}
+/* 헤더 */
+.appHeader{
+  height: 105px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "brand member"
+                       "brand search"; */
 }
 /* 로고 */
 .brand{
-  position: absolute;
   margin: 0;
-  left: 0;
-  top: 50%;
-  margin-top: -30px;
+  justify-content: center;
+  /* grid-area: brand; */
+}
+
+/* 멤버 서비스 */
+.memberOnly{
+  /* grid-area: member; */
 }
 /* 검색 폼 */
 .searchForm{
+  height: 60px;
   text-align: right;
+  /* grid-area: search; */
 }
 input[name="search"]{
   width: 400px;
@@ -31,57 +49,40 @@ input[name="search"]{
   background-color: #988574;
   color: #fff;
   height: 35px;
-  vertical-align: middle;
 }
 /* 메인 메뉴 */
-.appNavigation{
-  margin:0 auto;
+.menu{
   background: #988574;
-  padding: 2em 0;
-}
-.menu__list::after{
-  content: "";
-  clear: both;
-  display: block;
-}
-.menu__item{
-  float: left;
-  margin: 0 25px;
-}
-.menu__link{
-  font-size: 1.15em;
-  font-weight: 900;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
-}
-.menu__subMenu{
-  font-size: 1.05em;
-  font-weight: 700;
-  margin-top: 1.5em
-}
-.menu__subMenu li{
-  margin-top: 1em;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
 }
 .buttonBurger{
   display: none;
 }
 .menu__list{
   width: 1000px;
-  margin: 0 auto;
   color: #fff;
+  display: flex;
+  justify-content: space-around;
 }
+.menu__link{
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+.menu__subMenu{
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+.menu__subMenu li{
+  margin-top: 1.5rem;
+}
+
+/* 메인 콘텐츠 */
 .appMain{
-  width: 1020px;
-}
-.appMain::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.book, .news, .board, .favorite, .twitter{
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-  min-height: 300px;
+  justify-content: space-between;
 }
 .book{
   width: 320px;
@@ -94,7 +95,7 @@ input[name="search"]{
 }
 .favorite{
   width: 220px;
-  float: right;
+  order: 1;
 }
 .twitter{
   width: 420px;
