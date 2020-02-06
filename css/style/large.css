@@ -50,10 +50,23 @@ input[name="search"]{
   height: 35px;
 }
 .menu__list{
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+ 
 }
-
+.appNavigation>ul>li {
+  float: left;
+  margin-left:80px ;
+}
+.appNavigation {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #988574;
+}
+/* display none은 버뮤다 삼각지대 같은 것 */
+.buttonNone {
+ display: none;
+}
 /* 메인 콘텐츠 */
 .appMain{
   justify-content: space-between;
